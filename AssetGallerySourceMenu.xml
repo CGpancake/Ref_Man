@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menuDocument>
+  <menu>
+    <scriptItem id="GSG_Light_Filters">
+      <label>GSG Light Filters</label>
+      <scriptCode><![CDATA[
+dbfile = '/sasha/3D_LIBRARY/Houdini/Lights/LightFilters/LightFilters.db'
+if dbfile:
+    hou.ui.setSharedLayoutDataSource(
+        hou.AssetGalleryDataSource(dbfile))
+      ]]></scriptCode>
+    </scriptItem>
+    <scriptItem id="GSG_Environment_Lights">
+      <label>GSG Environment Lights</label>
+      <scriptCode><![CDATA[
+dbfile = '/sasha/3D_LIBRARY/Houdini/Lights/HDRIs/Environments.db'
+if dbfile:
+    hou.ui.setSharedLayoutDataSource(
+        hou.AssetGalleryDataSource(dbfile))
+      ]]></scriptCode>
+    </scriptItem>
+    <scriptItem id="GSG_Studio_Lights">
+      <label>GSG Studio Lights</label>
+      <scriptCode><![CDATA[
+dbfile = '/sasha/3D_LIBRARY/Houdini/Lights/HDRIs/Studios.db'
+if dbfile:
+    hou.ui.setSharedLayoutDataSource(
+        hou.AssetGalleryDataSource(dbfile))
+      ]]></scriptCode>
+    </scriptItem>
+    <scriptItem id="GSG_Skies">
+      <label>GSG Skies Lights</label>
+      <scriptCode><![CDATA[
+dbfile = '/sasha/3D_LIBRARY/Houdini/Lights/HDRIs/Skies.db'
+if dbfile:
+    hou.ui.setSharedLayoutDataSource(
+        hou.AssetGalleryDataSource(dbfile))
+      ]]></scriptCode>
+    </scriptItem>
+  </menu>
+</menuDocument>

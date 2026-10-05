@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menuDocument>
+  <menu>
+    <scriptItem id="GSG_Collections">
+      <label>GSG Collections</label>
+      <scriptCode><![CDATA[
+
+import os
+
+root_dir = '/sasha/3D_LIBRARY/Houdini/Materials'
+collections = []
+titles = []
+
+for item in os.listdir(root_dir):
+    item_path = os.path.join(root_dir, item)
+    if os.path.isdir(item_path):
+        collections.append(item)
+        titles.append(item.replace('_', ' '))
+
+# Sort both lists based on the titles
+sorted_pairs = sorted(zip(titles, collections))
+titles, collections = zip(*sorted_pairs)
+
+choice = hou.ui.selectFromList(titles, exclusive=True, message='Select one of the following options', title='GSG Collections')
+
+if choice:
+    selection = collections[choice[0]]
+    dbfile = os.path.join(root_dir, selection, selection + '.db')
+
+    if os.path.exists(dbfile):
+        hou.ui.setSharedAssetGalleryDataSource(
+            hou.AssetGalleryDataSource(dbfile),
+            'material'
+        )
+      ]]></scriptCode>
+    </scriptItem>
+
+  </menu>
+</menuDocument>
