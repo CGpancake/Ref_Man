@@ -1,4 +1,4 @@
 from job_tools.solaris import overrides
-print(f"Running absolute_houdini_job_tools ready.py...")
+print(f"Running job_tools ready.py...")
 
 overrides.override_drag_drop()
